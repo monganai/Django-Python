@@ -6,4 +6,4 @@ WORKDIR /code
 COPY . /code/
 RUN pip install -r requirements.txt
 
-LABEL "com.datadoghq.ad.logs"='[<LOGS_CONFIG>]'
+LABEL "com.datadoghq.ad.logs"='[{"source":"Django", "service": "webapp" }]'
