@@ -1,0 +1,11 @@
+curl -X POST \
+>   http://127.0.0.1:8000/accounts/login/ \
+>   -H 'Content-Type: application/json' \
+>   -d '{"username":"aidan","password1":"423321"}'
+
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -H "Accept:application/json" -d "{\"username\": \"aidan\", \"password1": \"423321\"}" http://localhost:8000/accounts/login \

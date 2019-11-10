@@ -1,0 +1,21 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p>Welcome to RideSafe,</p>
+  <p>This is the server for the application, so no need for you to be here!</p>
+
+
+  <p><a href="https://github.com/monganai/RideSafeDataCollection#ridesafedatacollection">Checkout our Github!</a></p>
+
+
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
