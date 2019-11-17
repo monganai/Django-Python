@@ -1,11 +1,3 @@
-curl -X POST \
->   http://127.0.0.1:8000/accounts/login/ \
->   -H 'Content-Type: application/json' \
->   -d '{"username":"aidan","password1":"423321"}'
+curl -v -c cookies.txt -b cookies.txt -d "username=aidan&password=423321&csrfmiddlewaretoken=fQzCikbQpMCa3dQacwz0EeEmodCEIPY55nGCwCqu9h6dAq5TQX1ZQoByhcxtfRD2" http://127.0.0.1:8000/accounts/login/
 
-
-
-
-
-
-curl -X POST -H "Content-Type: application/json" -H "Accept:application/json" -d "{\"username\": \"aidan\", \"password1": \"423321\"}" http://localhost:8000/accounts/login \
+curl -v -c cookies.txt -b cookies.txt -d "p1=23&p2=21" -X POST http://127.0.0.1:8000/

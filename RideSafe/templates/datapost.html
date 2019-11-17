@@ -4,13 +4,23 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
+{% if request.user.is_authenticated %}
+  Hi {{ request.user.username }}!
   <p>you can add data via this endpoint,</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    Lat: <input type="text" name="Lat"/><br/>
+    Long: <input type="text" name="Long"/><br/>
+<input type="submit" value="Post"/>
+
 
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in, no data for you</p>
+  <p>actually at this part</p>
+
+
   <a href="{% url 'login' %}">login</a>
 {% endif %}
 {% endblock %}
