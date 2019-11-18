@@ -11,6 +11,16 @@ from app.models import User,Post, CrashLocationPoint
 import logging
 import json
 
+
+from datadog import initialize, statsd
+
+options = {
+    'statsd_host':'127.0.0.1',
+    'statsd_port':8125
+}
+
+initialize(**options)
+
 logging.basicConfig(level=logging.DEBUG)
 
 
@@ -55,6 +65,7 @@ def getAllPoints():
         dict[t1] = lat
         dict[t2] = long
         i = i + 1
+        statsd.set('point_loop_i', i, tags=["environment:laptop"])
 
     print(dict)
     jdict = json.dumps(dict)
