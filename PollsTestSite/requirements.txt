@@ -4,7 +4,7 @@ chardet==3.0.4
 cryptography==2.3
 datadog==0.28.0
 decorator==4.4.0
-Django==2.2.4
+Django==2.2.10
 django-filter==2.1.0
 djangorestframework==3.9.4
 httplib2==0.9.2
